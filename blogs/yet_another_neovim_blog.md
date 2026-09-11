@@ -82,9 +82,12 @@ vim.cmd([[colorscheme tokyonight ]])
 ```
 
 ```lua
--- 3. And lastly need to setup the render-markdown plugin itself(TODO - This needs to point to a local directory)
-
-
+-- 3. And lastly need to setup the render-markdown plugin itself by pointing it to a local checked in code
+-- though the current working of current vim.pack.add is that it always clones the a local checked in repo as well into its opt/ path
+-- So the workaround for local development is to
+-- a. apply changes to local repo
+-- b. delete the render-markdown.nvim in the /Users/sharoha/Desktop/projects/installs/.local/share/ 
+-- c. and trigger :restart in neovim
 vim.pack.add({
 	"https://github.com/meanderingprogrammer/render-markdown.nvim",
 })
